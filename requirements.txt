@@ -1,0 +1,44 @@
+# Core
+fastapi>=0.100.0
+uvicorn[standard]>=0.25.0
+pydantic>=2.5.0
+pydantic-settings>=2.0.0
+python-multipart
+slowapi
+
+# LangChain - Latest
+langchain>=0.3.0
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+langchain-neo4j>=0.1.0
+langchain-experimental>=0.3.0
+openai>=1.0.0
+
+# ML & Embeddings
+sentence-transformers>=3.0.0
+rank-bm25
+torch>=2.0.0
+
+# Databases
+qdrant-client>=1.10.0
+neo4j>=5.20.0
+upstash-redis
+
+# Utilities
+semantic-text-splitter
+ragas>=0.2.0
+langsmith>=0.1.0
+datasets
+python-dotenv
+loguru
+tenacity
+httpx
+numpy
+scikit-learn
+tiktoken
+
+# Testing
+pytest
+pytest-asyncio
+pytest-cov
+faker

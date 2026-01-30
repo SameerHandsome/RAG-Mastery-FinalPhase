@@ -1,0 +1,12 @@
+{
+  "questions": [
+    "What is machine learning?",
+    "What is deep learning?",
+    "Why is Python popular for data science?"
+  ],
+  "ground_truths": [
+    "Machine learning is a subset of AI that enables systems to learn from data without explicit programming.",
+    "Deep learning is a subset of machine learning using artificial neural networks with multiple layers.",
+    "Python is popular for data science due to its simplicity and extensive libraries like NumPy, Pandas, and TensorFlow."
+  ]
+}

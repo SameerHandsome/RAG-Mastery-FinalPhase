@@ -1,0 +1,13 @@
+Python for Data Science
+
+Python is a high-level, interpreted programming language known for its simplicity and readability. It has become the de facto language for data science, machine learning, and artificial intelligence.
+
+Popular Libraries:
+- NumPy: Numerical computing and array operations
+- Pandas: Data manipulation and analysis with DataFrames
+- Scikit-learn: Machine learning algorithms and tools
+- TensorFlow: Google's deep learning framework
+- PyTorch: Facebook's neural network library
+- Matplotlib: Data visualization and plotting
+
+Python's extensive ecosystem, community support, and easy syntax make it ideal for both prototyping and production machine learning systems. It integrates well with other languages and tools.

@@ -1,0 +1,12 @@
+Deep Learning Fundamentals
+
+Deep learning is a subset of machine learning based on artificial neural networks with multiple layers. These networks attempt to simulate the behavior of the human brain to learn from large amounts of data.
+
+Key Components:
+- Neural Networks: Interconnected nodes that process information
+- Backpropagation: Algorithm for training networks by adjusting weights
+- Activation Functions: Non-linear transformations like ReLU and Sigmoid
+- Convolutional Neural Networks (CNNs): Specialized for image processing
+- Recurrent Neural Networks (RNNs): Designed for sequential data
+
+Deep learning has revolutionized computer vision, speech recognition, and natural language understanding. It requires large datasets and significant computational power, often utilizing GPUs for training.
