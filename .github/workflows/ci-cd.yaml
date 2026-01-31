@@ -34,7 +34,7 @@ jobs:
         GROQ_MODEL: llama-3.1-70b-versatile
         QDRANT_URL: ${{ secrets.QDRANT_URL }}
         QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
-        QDRANT_COLLECTION: test_collection
+        QDRANT_COLLECTION: Sameer
         NEO4J_URI: ${{ secrets.NEO4J_URI }}
         NEO4J_USER: ${{ secrets.NEO4J_USER }}
         NEO4J_PASSWORD: ${{ secrets.NEO4J_PASSWORD }}
