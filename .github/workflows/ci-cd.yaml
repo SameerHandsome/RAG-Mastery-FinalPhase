@@ -44,7 +44,7 @@ jobs:
         LANGCHAIN_API_KEY: ${{ secrets.LANGCHAIN_API_KEY }}
         LANGCHAIN_PROJECT: graph-rag-test
         BM25_CORPUS_VERSION: v1
-        API_KEY: test_api_key_12345
+        API_KEY: Sameer
       run: |
         pytest tests/ -v --cov=app --cov-report=xml --cov-report=term
     
