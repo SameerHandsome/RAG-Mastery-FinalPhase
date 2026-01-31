@@ -10,29 +10,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     
-    services:
-      redis:
-        image: redis:7-alpine
-        ports:
-          - 6379:6379
-        options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-      
-      neo4j:
-        image: neo4j:5.16.0
-        ports:
-          - 7687:7687
-        env:
-          NEO4J_AUTH: neo4j/testpassword
-        options: >-
-          --health-cmd "cypher-shell -u neo4j -p testpassword 'RETURN 1'"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-    
     steps:
     - uses: actions/checkout@v3
     
@@ -47,18 +24,27 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
+    - name: Set PYTHONPATH
+      run: |
+        echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
+    
     - name: Run tests with coverage
       env:
         GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        GROQ_MODEL: llama-3.1-70b-versatile
         QDRANT_URL: ${{ secrets.QDRANT_URL }}
         QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
-        NEO4J_URI: bolt://localhost:7687
-        NEO4J_USER: neo4j
-        NEO4J_PASSWORD: testpassword
-        REDIS_URL: redis://localhost:6379
+        QDRANT_COLLECTION: test_collection
+        NEO4J_URI: ${{ secrets.NEO4J_URI }}
+        NEO4J_USER: ${{ secrets.NEO4J_USER }}
+        NEO4J_PASSWORD: ${{ secrets.NEO4J_PASSWORD }}
+        UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+        UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+        LANGCHAIN_TRACING_V2: false
         LANGCHAIN_API_KEY: ${{ secrets.LANGCHAIN_API_KEY }}
-        API_KEY: test_api_key
+        LANGCHAIN_PROJECT: graph-rag-test
         BM25_CORPUS_VERSION: v1
+        API_KEY: test_api_key_12345
       run: |
         pytest tests/ -v --cov=app --cov-report=xml --cov-report=term
     
@@ -106,6 +92,6 @@ jobs:
     steps:
     - name: Deploy to production
       run: |
-        echo "Deploy to production server"
-        # Add your deployment commands here
-        # e.g., kubectl apply, ssh commands, etc.
+        echo "Deployment step - configure based on your infrastructure"
+        # Example: kubectl apply -f k8s/
+        # Or: ssh deploy@server 'docker-compose pull && docker-compose up -d'
